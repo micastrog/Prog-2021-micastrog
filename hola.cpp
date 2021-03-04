@@ -3,7 +3,7 @@
 int main (int arg, char **argv) {
 
 
-std::cout <<"no se que estoy haciendo\n";
+std::cout <<"cambio\n";
 
   return 0;
 }
