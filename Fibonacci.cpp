@@ -24,6 +24,7 @@ y=suma;
 std::cout << y<<"\n";
 }
 std::cout << "El resultado final es:" <<"\n"<< y <<"\n";
+std::cout << "<3";
 }
 
 
