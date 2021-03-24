@@ -4,7 +4,7 @@ void loop(int num, int exit, int div);
 
 int main(void){
 
-  int newnum=100;
+  int newnum=1000;
   int newexit;
   int newdiv;
 
