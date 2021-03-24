@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
  
  int a=1;
  int b=2;
- int limit=500;
+ int limit=20;
  int sum;
  fibo (a,b,limit,sum);
 
@@ -24,7 +24,7 @@ y=suma;
 std::cout << y<<"\n";
 }
 std::cout << "El resultado final es:" <<"\n"<< y <<"\n";
-std::cout << "<3";
+std::cout << "<3"<<"\n";
 }
 
 
