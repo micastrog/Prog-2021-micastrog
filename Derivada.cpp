@@ -5,7 +5,6 @@ long double Part(double x);
 long double Derivada(long double derv, long double h1, long double va1);
 long double Richardson(long double truederv, long double derv1, long double derv2,long double va1);
 
-const long double Va=12;
 const long double h=0.01;
 
 int main (int arg, char *argv[]){
