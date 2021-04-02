@@ -1,31 +1,44 @@
 #include<iostream>
 #include<cmath>
 
-double Derivada(long double x, long double h, long double derv);
-long double pi=3.14159265;
+long double Part(double x);
+long double Derivada(long double derv, long double h1, long double va1);
+long double Richardson(long double truederv, long double derv1, long double derv2,long double va1);
 
-int main (void){
+const long double Va=12;
+const long double h=0.01;
 
-  long double newx=pi;
-  long double newh=0.1;
+int main (int arg, char *argv[]){
+
+  auto Va=std::atof(argv[1]);
+  long double real=cos(Va);
   long double newderv;
-  long double real=cos(newx);
-
-  std::cout<< "Resultado computacional: " <<Derivada(newx, newh, newderv) << "\n";
+  long double newtruederv;
+  long double newderv1;
+  long double newderv2;
+  std::cout<< "Resultado sin Richardson" << Derivada(newderv,h,Va) <<"\n";
+  std::cout<< "Resultado computacional: "<< Richardson(newtruederv,newderv1,newderv2,Va) << "\n";
   std::cout<< "Resultado real: " << real <<"\n";
 
   return 0;
 }
 
-double Derivada(long double x, long double h, long double derv){
-  for(long double ii=h; ii>0.0000001; ii=ii/10 ){
+long double Richardson(long double truederv, long double derv1, long double derv2, long double va1){
+  truederv=(4/3)*(Derivada(derv1,h/2,va1))-(1/3)*(Derivada(derv2,h,va1));
+  return truederv;
+}
 
-    long double yy=sin(x+ii/2);
-    long double y=sin(x-ii/2);
-    long double derv= (yy-y)/ii;
-
-    std::cout<<derv<<"\n";
-  }
-
+long double Derivada(long double derv, long double h1, long double va1){
+  
+  derv=(Part(va1+(h1/2))-Part(va1-(h1/2)))/h1;
+  
   return derv;
 }
+
+long double Part(double x){
+  long double y=sin(x);
+  return y;
+}
+
+
+
